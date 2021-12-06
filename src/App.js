@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import List from "./components/List";
 import NewItem from "./components/NewItem";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
         <List todos={todos} onDelete={deleteItem}/>) : (
           <p>You don't seem to have anything going on...</p>
         )
-}
+      }
+      <Footer/>
     </div>
   );
 }
