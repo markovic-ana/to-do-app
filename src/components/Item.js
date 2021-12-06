@@ -1,6 +1,7 @@
 import { FaTrashAlt } from 'react-icons/fa'
 import { BsFillPencilFill } from 'react-icons/bs'
 import { useState } from 'react'
+import Itemstyles from './Item.module.css'
 
 
 const Item = ({ item, onDelete}) => {
@@ -9,7 +10,7 @@ const Item = ({ item, onDelete}) => {
   const [updatedText, setUpdatedText] = useState('')
  
     return (
-        <div className="listItem">
+        <div className={Itemstyles.listItem}>
             {showUpdateInput ? (
                 <form
                     onSubmit={event => {
@@ -17,7 +18,7 @@ const Item = ({ item, onDelete}) => {
                         item.text = updatedText
                         setUpdatedText(updatedText)
                     }}
-                    className="rename-form"
+                    className={Itemstyles.rename}
                 >
                     <input
                         type="text"
@@ -27,9 +28,9 @@ const Item = ({ item, onDelete}) => {
                 </form>
             ) : (
                 <h1>{item.text}</h1>)}
-            <div className="icons">
+            <div className={Itemstyles.icons}>
        
-                <BsFillPencilFill onClick={() => setShowUpdateInput(!showUpdateInput)}/>
+                <BsFillPencilFill onClick={() => setShowUpdateInput(!showUpdateInput)} />
                 <FaTrashAlt onClick={()=>onDelete(item.id)} />
                 </div>
            

@@ -1,0 +1,30 @@
+
+.listItem {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between ;
+  border-bottom: 1px solid #F92C85;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.rename input{
+  width: 100%;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  border-left: 5px solid #F92C85;
+  color:#F92C85;
+  padding-left: 7px;
+}
+
+.icons {
+  font-size: 20px;
+  color:#F92C85;
+}
+
+.icons input{
+  height: 20px;
+  width: 20px;
+  margin-right: 16px;
+}

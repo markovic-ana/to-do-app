@@ -7,9 +7,6 @@ import { useState } from "react";
 function App() {
   const [todos, setTodos] = useState('')
 
-  
-
-
   const addItem = (item) => {
     const id = Math.random().toString(36).substr(2, 9)
     const newItem = { id, ...item }

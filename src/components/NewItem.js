@@ -1,4 +1,5 @@
 import { useState } from "react"
+import NewItemstyles from './NewItem.module.css'
 
 const NewItem = ({ onAdd }) => {
     
@@ -15,7 +16,7 @@ const NewItem = ({ onAdd }) => {
     }
 
     return (
-        <form className="form" onSubmit={onSubmit}>
+        <form className={NewItemstyles.form} onSubmit={onSubmit}>
             <input type="text" value={text} onChange={(e)=>setText(e.target.value)} placeholder="Add a to-do item" />
             <input type="submit" style={{ backgroundColor: '#5EBEC4', border: 'none', color: 'white' }}  value="Save Item"/>
         </form>
