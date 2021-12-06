@@ -1,14 +1,17 @@
 import { FaTrashAlt } from 'react-icons/fa'
 import { BsFillPencilFill } from 'react-icons/bs'
-import { useState } from 'react'
+import { useState} from 'react'
 import Itemstyles from './Item.module.css'
 
 
 const Item = ({ item, onDelete}) => {
 
   const [showUpdateInput, setShowUpdateInput] = useState(false)
-  const [updatedText, setUpdatedText] = useState('')
+    const [updatedText, setUpdatedText] = useState('')
+
  
+
+
     return (
         <div className={Itemstyles.listItem}>
             {showUpdateInput ? (
