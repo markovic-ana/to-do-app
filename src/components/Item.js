@@ -6,8 +6,8 @@ import Itemstyles from './Item.module.css'
 //pojedinacni to do item
 const Item = ({ item, onDelete}) => {
 
-const [showUpdateInput, setShowUpdateInput] = useState('')
-    const [updatedText, setUpdatedText] = useState('')
+    const [showUpdateInput, setShowUpdateInput] = useState(false)
+    const [updatedText, setUpdatedText] = useState(item.text)
 
  
 
@@ -17,16 +17,19 @@ const [showUpdateInput, setShowUpdateInput] = useState('')
             {showUpdateInput ? (
                 <form
                     onSubmit={event => {
-                        event.preventDefault()
-                        item.text = updatedText
-                        setUpdatedText(updatedText)
+                        event.preventDefault();
+                        item.text = updatedText;
+                        setUpdatedText(updatedText);
+                        setShowUpdateInput(false);
                     }}
                     className={Itemstyles.rename}
                 >
                     <input
                         type="text"
                         value={updatedText}
-                        onChange={event => setUpdatedText(event.target.value)}
+                        onChange={event => {
+                            setUpdatedText(event.target.value);
+                        }}
                     />
                 </form>
             ) : (
