@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useState} from "react"
 import NewItemstyles from './NewItem.module.css'
 
+//forma za dodavanje novog to do item-a
 
 const NewItem = ({ onAdd }) => {
     const [text, setText] = useState('')
-    
+
 
     const onSubmit = (e) => {
         e.preventDefault()

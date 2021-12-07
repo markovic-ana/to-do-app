@@ -3,10 +3,10 @@ import { BsFillPencilFill } from 'react-icons/bs'
 import { useState} from 'react'
 import Itemstyles from './Item.module.css'
 
-
+//pojedinacni to do item
 const Item = ({ item, onDelete}) => {
 
-  const [showUpdateInput, setShowUpdateInput] = useState(false)
+const [showUpdateInput, setShowUpdateInput] = useState('')
     const [updatedText, setUpdatedText] = useState('')
 
  

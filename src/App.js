@@ -1,12 +1,24 @@
 import Header from "./components/Header";
-import List from "./components/List";
+import Items from "./components/Items";
 import NewItem from "./components/NewItem";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 
 
 function App() {
-  const [todos, setTodos] = useState('')
+  const [todos, setTodos] = useState(() => {
+  // getting stored value
+  const saved = localStorage.getItem("todos");
+  const initialValue = JSON.parse(saved);
+  return initialValue || "";
+});
+
+    useEffect(() => {
+  // storing input name
+  localStorage.setItem("todos", JSON.stringify(todos));
+}, [todos]);
+
+
 
   const addItem = (item) => {
     const id = Math.random().toString(36).substr(2, 9)
@@ -24,7 +36,7 @@ function App() {
       <Header />
       <NewItem onAdd={addItem}/>
       {todos.length > 0 ? (
-        <List todos={todos} onDelete={deleteItem}/>) : (
+        <Items todos={todos} onDelete={deleteItem}/>) : (
           <p>You don't seem to have anything going on...</p>
         )
       }
