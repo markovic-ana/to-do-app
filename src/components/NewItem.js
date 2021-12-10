@@ -11,11 +11,11 @@ const NewItem = ({ onAdd }) => {
         e.preventDefault()
 
         if (text.length < 1) {
-            alert("You didn't type anything. Please add a to do item")
+            alert("You didn't type anything. Please add a to do item");
         } else {
 
-        onAdd({ text })
-        setText('')
+            onAdd({ text });
+            setText('');
         }
     }
 
