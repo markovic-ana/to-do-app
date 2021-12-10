@@ -1,4 +1,7 @@
 .footer{
-    font-size: 12px;
+    display: flex;
+    font-size: 10px;
     color: grey;
+    justify-content: flex-end;
+    margin-top: 5px;
 }

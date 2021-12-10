@@ -4,7 +4,7 @@ import Footerstyles from './Footer.module.css'
 const Footer = () => {
     return (
         <div className={Footerstyles.footer}>
-            <span>*double-click your to-do items to add notes.</span>
+            <span>edit-erase-add</span>
         </div>
     )
 }

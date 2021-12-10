@@ -14,14 +14,14 @@ const NewItem = ({ onAdd }) => {
             alert("You didn't type anything. Please add a to do item")
         } else {
 
-            onAdd({ text })
+        onAdd({ text })
         setText('')
         }
     }
 
     return (
         <form className={NewItemstyles.form} onSubmit={onSubmit}>
-   <input type="text" value={text} onChange={(e)=>setText(e.target.value)} placeholder="Add a to-do item" />
+   <input type="text" value={text} onChange={(e)=>setText(e.target.value)} placeholder="Add a to-do list" />
             <input type="submit" style={{ backgroundColor: '#5EBEC4', border: 'none', color: 'white' }}  value="Save Item"/>
         </form>
     )
