@@ -4,7 +4,8 @@ import {BsFillPlusCircleFill} from 'react-icons/bs'
 import { useState} from 'react'
 import Itemstyles from './Item.module.css'
 import { Link } from 'react-router-dom'
-// import useLocalStorage from '../hooks/useLocalStorage'
+
+
 
 
 //pojedinacni to do item

@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import Details from './screens/Details'
 import useLocalStorage from "./hooks/useLocalStorage";
 
+
 function App() {
 
-  const [todos, setTodos] = useLocalStorage("todos",[]);
-
-
+  const [todos, setTodos] = useLocalStorage("todos", []);
+  
   const addItem = (item) => {
     const id = Math.random().toString(36).substr(2, 5);
     const newItem = { id, ...item };
@@ -20,13 +20,13 @@ function App() {
   const deleteItem = (id => {
     setTodos(todos.filter((item)=>item.id !== id))
   })
-
+  
 
   return (
     <Router>
       <Switch>
-        <Route path="/Details/:id">
-        <Details />
+        <Route path="/details/:id">
+          <Details />
         </Route>
               <div className="container">
       <Link to="/">
