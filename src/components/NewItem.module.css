@@ -5,6 +5,9 @@
   padding: 3px 7px;
   font-size: 20px;
   outline: none;
+  border-width: 1px;
+  border-color: #5ebec4;
+  
 } 
 
 .btn{

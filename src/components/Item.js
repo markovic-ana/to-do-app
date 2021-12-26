@@ -4,7 +4,7 @@ import { BsFillPlusCircleFill } from 'react-icons/bs';
 import { useState } from 'react';
 import Itemstyles from './Item.module.css';
 import { Link } from 'react-router-dom';
-import { getDetails } from "../getDetails";
+
 
 
 
@@ -12,8 +12,6 @@ import { getDetails } from "../getDetails";
 //pojedinacni to do item
 const Item = ({ item, onDelete }) => {
     
-       let details = getDetails();
-    console.log(details);
 
     const [showUpdateInput, setShowUpdateInput] = useState(false);
     const [updatedText, setUpdatedText] = useState(item.text)
