@@ -2,8 +2,7 @@ import Header from "./components/Header";
 import Items from "./components/Items";
 import NewItem from "./components/NewItem";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
-import Details from './screens/Details'
+import {Link, Outlet} from "react-router-dom";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 
@@ -23,27 +22,22 @@ function App() {
   
 
   return (
-    <Router>
-      <Switch>
-        <Route path="/details/:id">
-          <Details />
-        </Route>
+  
               <div className="container">
       <Link to="/">
-                <Header />
+        <Header />
       </Link>
-          <NewItem onAdd={addItem} />
+      <NewItem onAdd={addItem} />
           
           {todos.length > 0 ?
-            (<Items todos={todos} onDelete={deleteItem} />)
+        (<Items todos={todos} onDelete={deleteItem} />)
        : (
           <p>You don't seem to have anything going on...</p>
-        ) 
+        )
       }
-        <Footer />
+    <Outlet/>
+      <Footer />
       </div>
-      </Switch>
-      </Router>
   );
 }
 

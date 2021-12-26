@@ -3,7 +3,7 @@ import { BsFillPencilFill } from 'react-icons/bs'
 import {BsFillPlusCircleFill} from 'react-icons/bs'
 import { useState} from 'react'
 import Itemstyles from './Item.module.css'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 
 
@@ -13,8 +13,7 @@ const Item = ({ item, onDelete}) => {
 
     const [showUpdateInput, setShowUpdateInput] = useState(false);
     const [updatedText, setUpdatedText] = useState(item.text)
-
-
+    
     return (
             <div className={Itemstyles.listItem}>
             {showUpdateInput ? (
@@ -40,12 +39,11 @@ const Item = ({ item, onDelete}) => {
             <div className={Itemstyles.icons}>
                 <BsFillPencilFill onClick={() => setShowUpdateInput(!showUpdateInput)} />
                 <FaTrashAlt onClick={() => onDelete(item.id)} />
-                <Link to={`/details/${item.id}`}>
+                <Link to="details">
                     <BsFillPlusCircleFill />
-                    </Link>
+                </Link>
             </div>
-            </div>
-        
+        </div>
     )
 }
 

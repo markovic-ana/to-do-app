@@ -16,10 +16,13 @@ function useLocalStorage(keys, initialValue) {
         value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
       window.localStorage.setItem(keys, JSON.stringify(valueToStore));
-    } catch {}
+    } catch {
+      return value;
+    }
   };
 
   return [storedValue, setValue];
 }
 
 export default useLocalStorage;
+
