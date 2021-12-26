@@ -1,15 +1,19 @@
-import { FaTrashAlt } from 'react-icons/fa'
-import { BsFillPencilFill } from 'react-icons/bs'
-import {BsFillPlusCircleFill} from 'react-icons/bs'
-import { useState} from 'react'
-import Itemstyles from './Item.module.css'
-import { Link} from 'react-router-dom'
+import { FaTrashAlt } from 'react-icons/fa';
+import { BsFillPencilFill } from 'react-icons/bs';
+import { BsFillPlusCircleFill } from 'react-icons/bs';
+import { useState } from 'react';
+import Itemstyles from './Item.module.css';
+import { Link } from 'react-router-dom';
+import { getDetails } from "../getDetails";
 
 
 
 
 //pojedinacni to do item
-const Item = ({ item, onDelete}) => {
+const Item = ({ item, onDelete }) => {
+    
+       let details = getDetails();
+    console.log(details);
 
     const [showUpdateInput, setShowUpdateInput] = useState(false);
     const [updatedText, setUpdatedText] = useState(item.text)
@@ -40,11 +44,16 @@ const Item = ({ item, onDelete}) => {
                 <BsFillPencilFill onClick={() => setShowUpdateInput(!showUpdateInput)} />
                 <FaTrashAlt onClick={() => onDelete(item.id)} />
                 {/* <Link to={`/details/${item.id}`}> */}
-                <Link to="details">
+                 <Link
+                to = {`/details/${item.id}`}
+            key={item.id}
+            >
                     <BsFillPlusCircleFill />
                 </Link>
+               
               
             </div>
+            
         </div>
     )
 }

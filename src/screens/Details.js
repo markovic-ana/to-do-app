@@ -1,9 +1,9 @@
 // import Detailsstyles from './Details.module.css';
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { getDetails } from "../getDetails"
 
 
-const Details = () => {
+export default function Details() {
 
     let details = getDetails();
     console.log(details);
@@ -11,7 +11,7 @@ const Details = () => {
 
     return (
         <>
-            {details.map(detail => (
+            {/* {details.map(detail => (
                 <Link
                 to = {`/details/${detail.id}`}
             key={detail.id}
@@ -19,10 +19,9 @@ const Details = () => {
             {detail.text}
         </Link>
     ))
-}
+            } */}
+            <Outlet />
         </>
     )
-}
+};
 
-    
-export default Details

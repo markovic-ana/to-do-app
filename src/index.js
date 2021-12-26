@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from "./screens/Details";
+import Detail from "./screens/Detail";
 
 
 ReactDOM.render(
@@ -12,7 +13,17 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-        <Route path="details" element ={<Details/>}/>
+          <Route path="details" element={<Details />} >
+            <Route path=":id" element={<Detail />}/>
+            </Route>
+          <Route
+      path="*"
+      element={
+        <main style={{ padding: "1rem" }}>
+          <p>There's nothing here!</p>
+        </main>
+      }
+    />
         </Route>
         </Routes>
     </BrowserRouter>
