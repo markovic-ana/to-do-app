@@ -1,5 +1,5 @@
 // import Detailsstyles from './Details.module.css';
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { getDetails } from "../getDetails"
 
 
