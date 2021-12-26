@@ -35,7 +35,7 @@ function App() {
           <p>You don't seem to have anything going on...</p>
         )
       }
-    <Outlet/>
+      <Outlet />
       <Footer />
       </div>
   );

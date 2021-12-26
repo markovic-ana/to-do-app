@@ -39,9 +39,11 @@ const Item = ({ item, onDelete}) => {
             <div className={Itemstyles.icons}>
                 <BsFillPencilFill onClick={() => setShowUpdateInput(!showUpdateInput)} />
                 <FaTrashAlt onClick={() => onDelete(item.id)} />
+                {/* <Link to={`/details/${item.id}`}> */}
                 <Link to="details">
                     <BsFillPlusCircleFill />
                 </Link>
+              
             </div>
         </div>
     )
